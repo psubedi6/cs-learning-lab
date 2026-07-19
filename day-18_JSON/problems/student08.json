@@ -1,0 +1,13 @@
+{
+    "name": "Alice",
+    "age": 20,
+    "address": {
+        "city": "Toronto",
+        "province": "Ontario"
+    },
+    "courses": [
+        "Python",
+        "Data Science",
+        "SQL"
+    ]
+}
