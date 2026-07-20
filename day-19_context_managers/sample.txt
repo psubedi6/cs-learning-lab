@@ -1,0 +1,3 @@
+Hello, Python!
+Welcome to Context Managers.
+This file will be read using the with statement.
