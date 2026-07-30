@@ -1,13 +1,13 @@
 def simpler_decorator(func):
-    print("Before function")
+    def wrapper():
+        print("Before function")
 
-    func()
+        func()
 
-    print("After function")
+        print("After function")
 
-    return simpler_decorator
+    return wrapper
 
-@simpler_decorator
 def greet():
     print("Hello")
 

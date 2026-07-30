@@ -5,6 +5,7 @@ def outer():
         print("Inner function starts")
 
     inner()
+    
     print("Outer function ends")
 
 outer()
