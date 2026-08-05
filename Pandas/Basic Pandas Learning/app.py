@@ -1,9 +1,9 @@
 import pandas as pd
 
-df = pd.read_excel("SampleSuperstore.xls")
+df = pd.read_csv("artist.csv")
 
 print(df)
 import pandas as pd
 
-df = pd.read_excel("SampleSuperstore.xls")
-df.to_excel("SampleSuperstore.xlsx", index=False)
+df = pd.read_csv("artist.csv")
+df.to_csv("output.csv", index=False)
