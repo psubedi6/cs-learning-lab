@@ -1,5 +1,3 @@
-
-
 def generate_report(rows):
     report = []
     report.append("CSV REPORT")

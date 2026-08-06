@@ -22,3 +22,4 @@ def group_by(rows, column):
         if key not in groups:
             groups[key]= []
         groups[key].append(row)
+    return groups
