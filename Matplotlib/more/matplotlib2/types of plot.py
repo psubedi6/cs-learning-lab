@@ -1,0 +1,17 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+x= np.linspace(0,5,11)
+y = x**2
+
+#scatter
+plt.scatter(x,y)
+plt.show()
+
+#histogram
+plt.hist(y)
+plt.show()
+
+#boxplot
+plt.boxplot(x)
+plt.show()
