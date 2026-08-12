@@ -1,0 +1,56 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from basic_statistics import basic_statistics
+from category import spending_by_category, spending_percentage
+from clean_data import clean_data
+from data_quality_report import data_quality_report
+from load_data import load_data
+from transaction_analysis import large_transactions, top_transactions
+
+def main():
+    file_path = "personal_transactions_dashboard_ready.csv"
+
+    #we call the func load_data and pass the parameter file_path which will load the csv file as a copy and we store it in df.
+    df = load_data(file_path)
+
+    #calling the clean_data func from clean_data.py which returns the clean dataset
+    df= clean_data(df)
+
+    #General info
+    print("\n" + "=" * 50)
+    print("DATASET PREVIEW")
+    print("=" * 50)
+
+    print(f"\nFirst 5 rows{df.head()}")
+    print(f"\nLast 5 rows: {df.tail()}")
+
+    #data quality general info as well 
+    data_quality_report(df)
+
+    #Statistics
+    basic_statistics(df)
+
+    #categories percentage, on what spent.....
+    print("\n" + "=" * 50)
+    print("SPENDING BY TRANSACTION TYPE")
+    print("=" * 50)
+    print(spending_by_category(df))
+
+    print(f"\nSpending percentage: \n{spending_percentage(df).round(2)}")
+
+
+    #largest transactions above $2000
+    print("\n" + "=" * 50)
+    print("TRANSACTIONS ABOVE $2,000")
+    print("=" * 50)
+    print(large_transactions(df))
+
+    #top 5 largest transactions
+    print("\n" + "=" * 50)
+    print("TOP 5 LARGEST TRANSACTIONS")
+    print("=" * 50)
+    print(top_transactions(df))
+
+if __name__== "__main__":
+    main()
