@@ -7,6 +7,16 @@ from clean_data import clean_data
 from data_quality_report import data_quality_report
 from load_data import load_data
 from transaction_analysis import large_transactions, top_transactions
+from visualization.matplotlib_visualization import (
+    spending_by_transaction_type,
+    top_spending_categories,
+    transaction_type_percentage,
+    transaction_by_month,
+    spending_by_month,
+    average_spending_by_category,
+    transaction_amount_distribution,
+    transaction_amount_outliers,
+)
 
 def main():
     file_path = "personal_transactions_dashboard_ready.csv"
@@ -16,6 +26,16 @@ def main():
 
     #calling the clean_data func from clean_data.py which returns the clean dataset
     df= clean_data(df)
+
+    #calling data visuals
+    spending_by_transaction_type(df)
+    top_spending_categories(df)
+    transaction_type_percentage(df)
+    transaction_by_month(df)
+    spending_by_month(df)
+    average_spending_by_category(df)
+    transaction_amount_distribution(df)
+    transaction_amount_outliers(df)
 
     #General info
     print("\n" + "=" * 50)
