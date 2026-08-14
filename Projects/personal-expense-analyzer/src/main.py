@@ -17,6 +17,15 @@ from visualization.matplotlib_visualization import (
     transaction_amount_distribution,
     transaction_amount_outliers,
 )
+from visualization.seaborn_visualization import(
+    spending_by_account,
+    amount_distribution_by_transaction_type,
+    top_transaction_descriptions,
+    category_frequency_vs_spending,
+    category_frequency_vs_average_amount,
+    category_spending_comparison,
+    monthly_spending_heatmap
+)
 
 def main():
     file_path = "personal_transactions_dashboard_ready.csv"
@@ -28,6 +37,7 @@ def main():
     df= clean_data(df)
 
     #calling data visuals
+    #matplotlib
     spending_by_transaction_type(df)
     top_spending_categories(df)
     transaction_type_percentage(df)
@@ -36,6 +46,16 @@ def main():
     average_spending_by_category(df)
     transaction_amount_distribution(df)
     transaction_amount_outliers(df)
+
+    #seaborn
+    amount_distribution_by_transaction_type(df)
+    top_transaction_descriptions(df)
+    category_frequency_vs_spending(df)
+    spending_by_account(df)
+    category_frequency_vs_average_amount(df)
+    category_spending_comparison(df)
+    monthly_spending_heatmap(df)
+
 
     #General info
     print("\n" + "=" * 50)
