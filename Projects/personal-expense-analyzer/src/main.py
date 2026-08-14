@@ -26,6 +26,12 @@ from visualization.seaborn_visualization import(
     category_spending_comparison,
     monthly_spending_heatmap
 )
+from visualization.plotly_visualization import(
+    interactive_top_transactions,
+    interactive_monthly_spending,
+    interactive_category_account_amount
+
+)
 
 def main():
     file_path = "personal_transactions_dashboard_ready.csv"
@@ -56,6 +62,11 @@ def main():
     category_spending_comparison(df)
     monthly_spending_heatmap(df)
 
+    #plotly
+    interactive_top_transactions(df)
+    interactive_monthly_spending(df)
+    interactive_category_account_amount(df)
+    
 
     #General info
     print("\n" + "=" * 50)
