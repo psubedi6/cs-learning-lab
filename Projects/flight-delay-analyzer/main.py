@@ -11,25 +11,52 @@ from data_understanding import data_understanding
 from general_analysis import (
     highest_delay_rate,
     highest_average_delay,
-    airport_highest_delay_rate
+    airport_highest_delay_rate,
+    most_delay_months,
+    flight_delay_cause,
+    higthest_delay_routes,
+    airlines_cancelation_rate,
+)
+from analysis import (
+    average_arrival_delay,
+    cancellation_rate,
+    early_vs_delayed
 )
 
-file_path= "data/flight_data_2024_sample.csv"
-df = load_data(file_path)
+def main():
+    file_path= "data/flight_data_2024_sample.csv"
+    df = load_data(file_path)
 
 #understanding basic things about data
 #presenting the clean data
-clean_data(df)
+    clean_data(df)
 
 #looking for categorical data
-category(df)
+    category(df)
 
-basic_statistics(df)
+    basic_statistics(df)
 
-data_understanding(df)
+    data_understanding(df)
 
-highest_delay_rate(df)
+    highest_delay_rate(df)
 
-highest_average_delay(df)
+    highest_average_delay(df)
 
-airport_highest_delay_rate(df)
+    airport_highest_delay_rate(df)
+
+    most_delay_months(df)
+
+    flight_delay_cause(df)
+
+    higthest_delay_routes(df)
+
+    airlines_cancelation_rate(df)
+
+    average_arrival_delay(df)
+
+    cancellation_rate(df)
+
+    early_vs_delayed(df)
+
+if __name__== "__main__":
+    main()
