@@ -22,7 +22,11 @@ from analysis import (
     cancellation_rate,
     early_vs_delayed
 )
-
+from visualization import(
+    airlines_avg_arrival_delay,
+    distribution_arrival_delay,
+    delayed_vs_notDelayed
+)
 def main():
     file_path= "data/flight_data_2024_sample.csv"
     df = load_data(file_path)
@@ -57,6 +61,14 @@ def main():
     cancellation_rate(df)
 
     early_vs_delayed(df)
+
+
+
+
+    #visualization
+    airlines_avg_arrival_delay(df)
+    distribution_arrival_delay(df)
+    delayed_vs_notDelayed(df)
 
 if __name__== "__main__":
     main()

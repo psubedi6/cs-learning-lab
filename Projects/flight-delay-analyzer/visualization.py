@@ -1,0 +1,53 @@
+#Here we'll solve and see all the visualizations
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+import numpy as np
+
+#Which airlines have the highest average arrival delay?
+def airlines_avg_arrival_delay(df):
+    fig, ax = plt.subplots(figsize=(10,6))
+
+    delay =(df[df["arr_delay"] < 0]
+    .groupby("op_unique_carrier")["arr_delay"]
+    .mean()
+    .abs()
+    .sort_values(ascending= False)
+)
+    
+    ax.bar(delay.index, delay.values)
+    
+    ax.set_title("Airlines with highest average arrival delay")
+    ax.set_xlabel("Flight Name")
+    ax.set_ylabel("Average delay")
+
+    plt.tight_layout()
+    plt.show()
+
+#What does the distribution of arrival delays look like?
+def distribution_arrival_delay(df):
+    fig, ax = plt.subplots(figsize = (10, 6))
+
+    ax.hist(df["arr_delay"], bins=10)
+    ax.set_title("Distribution of Arrival Delay")
+    ax.set_xlabel("Arrival Delay (minutes)")
+    ax.set_ylabel("Number of Flights")
+
+    plt.tight_layout()
+    plt.show()
+
+#What percentage of flights were delayed vs not delayed?
+def delayed_vs_notDelayed(df):
+
+    fix, ax = plt.subplots(figsize = (10,6))
+
+    ax.pie([(df["dep_delay"]>0).sum(), (df["dep_delay"]<=0).sum()])
+    ax.set_title("Flight Delayed vs Not Delayed")
+
+    plt.tight_layout()
+    plt.show()
+
+#How does average arrival delay change by month?
+def avg_arr_delay_by_month(df):
+    fix, ax = plt.subplots(figsize= (10,6))
+    
