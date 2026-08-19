@@ -25,7 +25,11 @@ from analysis import (
 from visualization import(
     airlines_avg_arrival_delay,
     distribution_arrival_delay,
-    delayed_vs_notDelayed
+    delayed_vs_notDelayed,
+    avg_arr_delay_by_month,
+    flight_distance_vs_arr_delay,
+    arr_delay_distribution_diff_airlines,
+    airlines_most_flights
 )
 def main():
     file_path= "data/flight_data_2024_sample.csv"
@@ -69,6 +73,10 @@ def main():
     airlines_avg_arrival_delay(df)
     distribution_arrival_delay(df)
     delayed_vs_notDelayed(df)
+    avg_arr_delay_by_month(df)
+    flight_distance_vs_arr_delay(df)
+    arr_delay_distribution_diff_airlines(df)
+    airlines_most_flights(df)
 
 if __name__== "__main__":
     main()
